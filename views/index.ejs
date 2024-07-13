@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/public/css/style.css">
+</head>
+
+<body class="bg-zinc-800">
+
+  <div class="form p-10 text-white">
+    <form action="/save" method="post">
+      <input type="text" class="block px-5 py-2 bg-zinc-500 outline-none color-white w-full rounded-md my-2"
+        name="Title" placeholder="Title Goes Here">
+      <textarea class="block px-5 py-2 bg-zinc-500 outline-none color-white w-full rounded-md my-2 resize-none"
+        name="Details" placeholder="Write your Task Details Here"></textarea>
+      <input type="submit" value="Save Task" class="bg-green-600 rounded-md px-4 py-2">
+    </form>
+  </div>
+  <div class="component flex gap-4 px-5 py-2 m-2 text-white">
+      <% if(files.length!=0){ %>
+        <% files.forEach(function(val){%>
+          <div class="componetmain block rounded-md bg-zinc-500 width-40 px-5 py-2">
+             <h2><%= val %></h2>
+             <div class="ankers flex gap-5">
+               <a class="readMore text-blue-800 hover:text-blue-600 transition duration-100 ease-in-out" href="/More/<%= val %>">Read More</a>
+               <a class="Edit text-blue-800 hover:text-blue-600 transition duration-100 ease-in-out" href="/Delete/<%= val %>">Delete</a>
+               <a class="Edit text-blue-800 hover:text-blue-600 transition duration-100 ease-in-out" href="/Edit/<%= val %>">Edit</a>
+             </div>
+          </div>
+          <% }) %>
+        <% }else{ %>
+          <h1>No Tasks yet</h1>
+        <% } %>
+  </div>
+
+</body>
+
+</html>

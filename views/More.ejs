@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/public/css/style.css">
+</head>
+
+<body class="bg-zinc-800 p-10">
+    <a href="/" class="goHome text-blue-800 bg-zinc-500 rounded-md px-4 py-2 hover:text-blue-600 transition duration-100 ease-in-out">
+        Go Home
+    </a>
+    <div class="tasksMain bg-zinc-500 rounded-md">
+        <div class="TaskTitle my-5 text-white rounded-md block px-5 py-2">
+            <%= TaskTitle[0] %>
+        </div>
+        <div class="TaskDetails my-2 px-5 py-2 text-white rounded-md block">
+            <%= filedata %>
+        </div>
+
+    </div>
+</body>
+
+</html>
