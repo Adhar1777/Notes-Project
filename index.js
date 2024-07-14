@@ -18,7 +18,7 @@ app.get("/",(req,res)=>{
 app.post("/save",(req,res)=>{
     fs.writeFile(`./files/${req.body.Title.split(' ').join('')}.txt`, req.body.Details, (err)=>{
 
-        res.redirect("/Delete")
+        res.redirect("/")
     });
 })
 app.post("/append/:TaskTitle",(req,res)=>{
